@@ -73,6 +73,11 @@ angular.module('app', ['ionic'])
       url: '/menu',
       templateUrl: 'side-menu5.html'
     })
+    
+    .state('modal1', {
+      url: '/modal',
+      templateUrl: 'modal1.html'
+    })
     ;
 
   // if none of the above states are matched, use this as the fallback
@@ -112,7 +117,7 @@ angular.module('app', ['ionic'])
                     <input type="text" placeholder="">
                 </label>
             </ion-list>
-            <button class="button button-stable button-block ">Sign up</button>
+            <a href="#/login" class="button button-stable button-block ">Sign up</a>
         </form>
     </ion-content>
 </ion-view></script>
@@ -131,7 +136,7 @@ angular.module('app', ['ionic'])
                 </label>
             </ion-list>
             <div class="spacer" style="height: 40px;"></div>
-            <button class="button button-stable button-block ">Log in</button>
+            <a href="#/tabs" class="button button-stable button-block ">Log in</a>
             <a href="#/signup" class="button button-positive button-clear button-block ">Or create an account</a>
         </form>
     </ion-content>
@@ -140,7 +145,13 @@ angular.module('app', ['ionic'])
 <ion-view title="Noche">
     <ion-tabs class="tabs-stable tabs-icon-top">
         <ion-tab title="SEARCH" icon="ion-android-search">
-            <ion-content padding="true" class="has-header"></ion-content>
+            <ion-content padding="true" class="has-header">
+                <ion-list>
+                    <ion-item href="#/modal">Breakfast</ion-item>
+                    <ion-item>Lunch</ion-item>
+                    <ion-item>Dinner</ion-item>
+                </ion-list>
+            </ion-content>
         </ion-tab>
         <ion-tab title="NEARBY" icon="ion-android-location">
             <ion-content padding="true" class="has-header"></ion-content>
@@ -173,5 +184,22 @@ angular.module('app', ['ionic'])
         <ion-content padding="true" scroll="false" class="has-header"></ion-content>
     </ion-pane>
 </ion-side-menus></script>
+<script id="modal1.html" type="text/ng-template">
+<div class="modal">
+    <ion-header-bar class="bar-stable">
+        <h1 class="title">Breakfast</h1>
+        <div class="buttons">
+            <button class="button button-stable button-clear ">Close</button>
+        </div>
+    </ion-header-bar>
+    <ion-content padding="true" scroll="false" class="has-header">
+        <ion-list></ion-list>
+        <ion-list>
+            <ion-item>Item 1</ion-item>
+            <ion-item>Item 2</ion-item>
+            <ion-item>Item 3</ion-item>
+        </ion-list>
+    </ion-content>
+</div></script>
   </body>
 </html>
